@@ -3,14 +3,48 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: cursive;
 }
 
 .content{
     display: flex;
 }
 
-.sizes{
+.opt{
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+button{
+    background-color: #00ffff;
+    padding: 10px 0;
+    text-align: center;
+    margin: 5px;
+    border: 3px solid black;
+    border-radius: 15px;
+    font-size: 16pt;
+    width: 210px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+}
+
+.sizes{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.size{
+    width: 100px;
+}
+
+.colors{
+    display: flex;
+    flex-direction: column;
+}
+
+.selected{
+    background-color: #32d1d1;
+    box-shadow: 0 0 0;
 }
 
 .container{

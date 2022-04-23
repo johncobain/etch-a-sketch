@@ -9,8 +9,8 @@ function square(blocks){
         board.appendChild(pixel);
     }
     board.style.gridTemplateColumns = `repeat(${blocks}, 1fr)`;
-    
-    let colors = document.querySelectorAll('.colors');
+  
+    let colors = document.querySelectorAll('.color');
     let pixels = document.querySelectorAll('.pixel');// paint the squares
     let rainbow = 0;
     colors.forEach(color => color.addEventListener('click', (button) =>{
@@ -23,6 +23,8 @@ function square(blocks){
             rainbow = 2;
         }
     }));
+
+    
     pixels.forEach(block => block.addEventListener('mouseover', (e) => {
         if(rainbow === 0){
             e.target.style.backgroundColor = 'black';
@@ -35,6 +37,11 @@ function square(blocks){
     
     let clear = document.querySelector('#clear');//clear the page
     clear.addEventListener('click', () => pixels.forEach(block => block.style.backgroundColor = 'white'));
+    
+    colors.forEach(button => button.addEventListener('click', () =>{
+        colors.forEach(button => button.classList.remove('selected'));
+        button.classList.add('selected');
+    }));
 }
 
 square(16);
