@@ -21,8 +21,8 @@ body{
     margin-right: 150px;
 }
 
-button{
-    background-color: #00ffff;
+button, input{
+    background-color: #ffffff;
     padding: 10px 0;
     text-align: center;
     margin: 5px;
@@ -31,6 +31,11 @@ button{
     font-size: 16pt;
     width: 210px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+}
+
+input{
+    height: 55px;
+    padding: 5px 10px;
 }
 
 .sizes{
@@ -47,8 +52,10 @@ button{
     flex-direction: column;
 }
 
+
 .selected{
-    background-color: #32d1d1;
+    background-color: #000;
+    color: white;
     box-shadow: 0 0 0;
 }
 
@@ -59,4 +66,5 @@ button{
     border: 2px solid black;
     background-color: white;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    border-radius: 10px;
 }

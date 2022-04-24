@@ -12,27 +12,29 @@ function square(blocks){
   
     let colorFirst = document.querySelector('.color')
     let colors = document.querySelectorAll('.color');
+    let inputColor = document.querySelector('input')
     let pixels = document.querySelectorAll('.pixel');// paint the squares
     let rainbow = 0;
     colors.forEach(color => color.addEventListener('click', (button) =>{
         console.log(button.target.id)
-        if(button.target.id === 'black'){
-            rainbow = 0;
+        if(button.target.id === 'colormode'){
+            rainbow = 0
         }else if(button.target.id === 'rainbow'){
             rainbow = 1;
         }else if (button.target.id === 'erase'){
             rainbow = 2;
         }
     }));
-
+  
+    //inputColor.addEventListener('input', () => rainbow = 3);
     
     pixels.forEach(block => block.addEventListener('mouseover', (e) => {
-        if(rainbow === 0){
-            e.target.style.backgroundColor = 'black';
-        }else if(rainbow === 1){
+        if(rainbow === 1){
             e.target.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
         }else if(rainbow === 2){
             e.target.style.backgroundColor = 'white';
+        }else if(rainbow === 0){
+            e.target.style.backgroundColor = inputColor.value;
         }
     }));
     
