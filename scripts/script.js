@@ -10,6 +10,7 @@ function square(blocks){
     }
     board.style.gridTemplateColumns = `repeat(${blocks}, 1fr)`;
   
+    let colorFirst = document.querySelector('.color')
     let colors = document.querySelectorAll('.color');
     let pixels = document.querySelectorAll('.pixel');// paint the squares
     let rainbow = 0;
@@ -35,6 +36,9 @@ function square(blocks){
         }
     }));
     
+    colors.forEach(button => button.classList.remove('selected'));
+    colorFirst.classList.add('selected');
+
     let clear = document.querySelector('#clear');//clear the page
     clear.addEventListener('click', () => pixels.forEach(block => block.style.backgroundColor = 'white'));
     
