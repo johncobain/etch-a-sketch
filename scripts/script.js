@@ -26,15 +26,19 @@ function square(blocks){
         }
     }));
   
-    //inputColor.addEventListener('input', () => rainbow = 3);
-    
+    let mouseDown = false
+    document.body.onmousedown = () => (mouseDown = true);
+    document.body.onmouseup = () => (mouseDown = false);
+
     pixels.forEach(block => block.addEventListener('mouseover', (e) => {
-        if(rainbow === 1){
-            e.target.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
-        }else if(rainbow === 2){
-            e.target.style.backgroundColor = 'white';
-        }else if(rainbow === 0){
-            e.target.style.backgroundColor = inputColor.value;
+        if(mouseDown){
+            if(rainbow === 1){
+                e.target.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
+            }else if(rainbow === 2){
+                e.target.style.backgroundColor = 'white';
+            }else if(rainbow === 0){
+                e.target.style.backgroundColor = inputColor.value;
+            }
         }
     }));
     
